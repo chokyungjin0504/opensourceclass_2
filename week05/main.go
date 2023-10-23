@@ -8,6 +8,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 /*
@@ -47,67 +48,34 @@ func main() {
 	dice := reand.Intn(6) + 1
 	fmt.Println(dice)
 */
-/*
-	func main() {
-		rand.Seed(time.Now().Unix()) //get the current data and time as an integer
-		answer := rand.Intn(100) + 1 // random integer number (1~100)
-		fmt.Println("Guess Number Game~!")
-		fmt.Println(answer)
 
-
-
-		reader := bufio.NewReader(os.Stdin)
-
-		for i := 0; i < 10 ; i ++ {
-			fmt.Println("You have ", 10-i, "chances~" )
-			fmt.Print("Input guess number")
-			inputNumberString, err := reader.ReadString('\n')
-			if err != nil {
-
-				log.Fatal(err)
-			}
-			inputNumberString = strings.TrimSpace(inputNumberString)
-			inputNumber, err := srconv.Atoi(inputNumberString)
-			if err != nil {
-				log.Fatal(err)
-			}
-			if inputNumber == answer {
-				fmt.Println("Great You got the Number. Congrates~") // You got the answer!
-			} else if inputNumber < answer {
-				fmt.Println("Guess number is lower than answer") // The answer is higher!
-			} else if inputNumber > answer {
-				fmt.Println("Guess number is higher than answer") // The answer is lower!
-			}
-		}
-	}
-
-}
-*/
 func main() {
-	fmt.Println("Guess number game!")
-	answer := rand.Intn(100) + 1 // 1 ~ 100
+	rand.Seed(time.Now().Unix()) //get the current data and time as an integer
+	answer := rand.Intn(100) + 1 // random integer number (1~100)
+	fmt.Println("Guess Number Game~!")
 	fmt.Println(answer)
 
+	reader := bufio.NewReader(os.Stdin)
+
 	for i := 0; i < 10; i++ {
-		fmt.Println("Chance left :", 10-i)
-		fmt.Print("Input number : ")
-		reader := bufio.NewReader(os.Stdin)
-		inputGuessString, err := reader.ReadString('\n')
+		fmt.Println("You have ", 10-i, "chances~")
+		fmt.Print("Input guess number")
+		inputNumberString, err := reader.ReadString('\n')
+		if err != nil {
+
+			log.Fatal(err)
+		}
+		inputNumberString = strings.TrimSpace(inputNumberString)
+		inputNumber, err := strconv.Atoi(inputNumberString) //문자열을 정수로 변환
 		if err != nil {
 			log.Fatal(err)
 		}
-		inputGuessString = strings.TrimSpace(inputGuessString) // remove space
-		inputGuess, err := strconv.Atoi(inputGuessString)
-		if err != nil {
-			log.Fatal(err)
-		}
-		if inputGuess == answer {
-			fmt.Println("Great! You got the number. Congratulations~")
-			break
-		} else if inputGuess < answer {
-			fmt.Println("Your guess number is lower than answer!") // answer is higher
-		} else if inputGuess > answer {
-			fmt.Println("Your guess number is higher than answer!") // answer is lower
+		if inputNumber == answer {
+			fmt.Println("Great You got the Number. Congrates~") // You got the answer!
+		} else if inputNumber < answer {
+			fmt.Println("Guess number is lower than answer") // The answer is higher!
+		} else if inputNumber > answer {
+			fmt.Println("Guess number is higher than answer") // The answer is lower!
 		}
 	}
 }
