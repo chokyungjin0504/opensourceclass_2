@@ -9,10 +9,13 @@ func main() {
 	a[3] = "d"
 	as := a[0:2]
 	as[1] = "z"
-	c := append(a, "y", "x")
+	c := append(a, "y", "x", "q", "w", "u", "v", "n") //capacity가 바뀐다 5 -> 10
 
 	fmt.Println(a, len(a), cap(a)) //cap: 내장함수
 	fmt.Println(c, len(c), cap(c))
+	fmt.Printf("%x %x %x\n", &a[0], &as[0], &c[0]) //주소값 출력
+	c[0] = "k"
+	fmt.Println(a, c)
 }
 
 // func main() {
