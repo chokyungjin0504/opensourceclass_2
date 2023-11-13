@@ -9,8 +9,10 @@ func main() {
 	a[3] = "d"
 	as := a[0:2]
 	as[1] = "z"
+	c := append(a, "y", "x")
 
 	fmt.Println(a, len(a), cap(a)) //cap: 내장함수
+	fmt.Println(c, len(c), cap(c))
 }
 
 // func main() {
