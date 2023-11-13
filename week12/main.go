@@ -3,16 +3,27 @@ package main
 import "fmt"
 
 func main() {
-	a := []string{"a", "b", "c", "d"}
-	as := a[:2]
+	a := make([]string, 4, 5) // 타입, 개수, 수용량
+	a[0] = "a"
+	a[2] = "C"
+	a[3] = "d"
+	as := a[0:2]
 	as[1] = "z"
-	fmt.Println(a)
-	fmt.Println(as)
 
-	b := [4]int{4, 3, 2, 1}
-	bs := b[1:3]
-	fmt.Println(bs)
+	fmt.Println(a, len(a), cap(a)) //cap: 내장함수
 }
+
+// func main() {
+// 	a := []string{"a", "b", "c", "d"}
+// 	as := a[:2]
+// 	as[1] = "z"
+// 	fmt.Println(a)
+// 	fmt.Println(as)
+
+// 	b := [4]int{4, 3, 2, 1}
+// 	bs := b[1:3]
+// 	fmt.Println(bs)
+// }
 
 // var s []int
 // s = make([]int, 5)
