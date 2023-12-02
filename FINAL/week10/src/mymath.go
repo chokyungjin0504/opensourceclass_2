@@ -1,8 +1,9 @@
 package mymath
 
-func MyAbs(number int) int { //소문자로 시작하면 외부에서 사용 불가
+func MyAbs(number int) int {
 	if number < 0 {
 		return number * -1
+	}
 	return number
 }
 

@@ -22,7 +22,7 @@ func main() {
 // 	a := []string{"a", "b", "c", "d"}
 // 	as := a[:2]
 // 	as[1] = "z"
-// 	fmt.Println(a)
+// 	fmt.Println(a)/
 // 	fmt.Println(as)
 
 // 	b := [4]int{4, 3, 2, 1}
