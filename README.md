@@ -1,6 +1,5 @@
 # 🐳Opensource Programming
-> This repository contains Go code files and Git and GitHub commands covered in the “Open Source Programming” course.
-> 2023-2
+> This repository contains Go code files and Git and GitHub commands covered in the “Open Source Programming” course. (2023-2)
 
 ##  ⚙️Tech
 ![go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
